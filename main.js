@@ -3,6 +3,11 @@ const items = []
 function addItem() {
     const itemName = document.querySelector("#item").value
 
+    if (itemName === "") {
+        alert("Digite um item valido")
+        return
+    }
+
     const item = {
         name: itemName,
         checked: false
@@ -56,7 +61,7 @@ function removeItem(itemName) {
     showItemsList()
 }
 
-function checkItem() {
+function checkItem(itemName) {
     const item = items.find((item) => item.name ===itemName)
     item.checked = !item.checked
     showItemsList()
