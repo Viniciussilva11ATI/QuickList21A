@@ -57,5 +57,7 @@ function removeItem(itemName) {
 }
 
 function checkItem() {
-
+    const item = items.find((item) => item.name ===itemName)
+    item.checked = !item.checked
+    showItemsList()
 }
